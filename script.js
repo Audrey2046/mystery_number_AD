@@ -23,8 +23,15 @@
             jeuTermine = true;
             document.getElementById("rejouer").style.display = "inline-block";
         } else {
+            let indice = "";
+            if (nombre < numeroMystere) {
+                indice = "C'est plus.";
+            } else {
+                indice = "C'est moins.";
+            }
+    
             if (essaisRestants > 0) {
-                message.textContent = `Mauvais numéro. Il te reste ${essaisRestants} essai(s).`;
+                message.textContent = `Mauvais numéro. Il te reste ${essaisRestants} essai(s). ${indice}`;
                 message.className = "message info";
             } else {
                 message.textContent = `Dommage ! Le numéro mystère était ${numeroMystere}.`;
