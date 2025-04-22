@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js"></script>
+    <title>Jeu</title>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Jeu du Numéro Mystère</h2>
+    <p>Devine un nombre entre 1 et 10</p>
+    <input type="number" id="guess" min="1" max="10">
+    <button onclick="verifier()">Valider</button>
+    <button id="rejouer" onclick="reinitialiser()">Rejouer</button>
+    <div class="message" id="message"></div>
+</div>
+
+</body>
+
+</html>
