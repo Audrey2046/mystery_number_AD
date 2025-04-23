@@ -35,3 +35,21 @@ input, button {
 .message.info {
     color: blue;
 }
+
+/* Animation de clignotement */
+@keyframes clignoter {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Classe à ajouter pour faire clignoter le texte */
+.clignoter {
+    animation: clignoter 1s infinite; /* Animation de 1 seconde, en boucle infinie */
+}

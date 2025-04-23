@@ -18,10 +18,12 @@
         essaisRestants--; // Réduire le nombre d'essais restants
 
         if (nombre === numeroMystere) { // Le numéro est trouvé
+            setTimeout(function() {
             message.textContent = "Bravo ! Tu as trouvé le numéro mystère 🎉";
-            message.className = "message success";
+            message.className = "message success clignoter";
             jeuTermine = true;
             document.getElementById("rejouer").style.display = "inline-block"; // Affiche le bouton "rejouer"
+            }, 1000); // Délai de 1 secondes
         } else {
             let indice = "";
             if (nombre < numeroMystere) {
@@ -31,7 +33,7 @@
             }
     
             if (essaisRestants > 0) { // S'il reste des essais
-                message.textContent = `Mauvais numéro. Il te reste ${essaisRestants} essai(s). ${indice}`; // Affichage essais restant et indices
+                message.textContent = `Mauvais numéro. Il reste ${essaisRestants} essai(s). ${indice}`; // Affichage essais restant et indices
                 message.className = "message info";
             } else { // S'il ne reste plus d'essais
                 message.textContent = `Dommage ! Le numéro mystère était ${numeroMystere}.`;
@@ -41,6 +43,7 @@
             }
         }
     }
+
 
     function reinitialiser() { // Réinitialiser les variables 
         numeroMystere = Math.floor(Math.random() * 10) + 1;
